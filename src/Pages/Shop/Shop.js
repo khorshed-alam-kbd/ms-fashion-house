@@ -18,6 +18,8 @@ const Shop = () => {
                 <div className='grid lg:grid-cols-3  gap-5 group'>
                     {
                         allProducts.map(product =>
+                            
+
                             <div className="card card-compact shadow-xl duration-500 group-hover:scale-[0.85] hover:!scale-100  cursor-pointer ">
                                 <figure><img className='h-56' src={product.image} alt="" /></figure>
                                 <div className="card-body rounded-b-2xl bg-base-300">
@@ -28,7 +30,7 @@ const Shop = () => {
                                     <p>Rated Person: {product.rating.count}</p>
                                     <p className='font-bold'>Price: ${product.price}</p>
                                     <div className="card-actions justify-end">
-                                        <Link to={`/product/${product.id}`}><button className="btn">Buy Now</button></Link>
+                                        <Link to={`/product/${product.id}`}><button className="btn hover:btn-success">Buy Now</button></Link>
                                     </div>
                                 </div>
                             </div>

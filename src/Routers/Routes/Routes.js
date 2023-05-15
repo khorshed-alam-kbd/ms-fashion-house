@@ -11,6 +11,7 @@ import WomensCollection from '../../Pages/Shop/WomensCollection/WomensCollection
 import ContactUs from '../../Pages/ContactUs/ContactUs';
 import AboutUs from '../../Pages/AboutUs/AboutUs';
 import Product from '../../Pages/Product/Product';
+import CheckOut from '../../Pages/CheckOut/CheckOut';
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
                 path: '/product/:id',
                 element: <Product></Product>,
                 loader: ({ params }) => fetch(`https://fakestoreapi.com/products/${params.id}`)
+            },
+            {
+                path: '/checkout',
+                element: <CheckOut></CheckOut>
             },
             {
                 path: '/contactUs',

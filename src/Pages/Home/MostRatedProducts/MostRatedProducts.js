@@ -50,7 +50,7 @@ const MostRatedProducts = () => {
                                 <p className='font-bold'>$ {product.price}</p>
                                 <p className='font-semibold'>Rating: {product.rating.rate}</p>
                                 <div className="card-actions justify-end">
-                                    <Link to={`/product/${product.id}`}><button className="btn btn-xs">Buy Now</button></Link>
+                                    <Link to={`/product/${product.id}`}><button className="btn btn-xs hover:btn-success ">Buy Now</button></Link>
                                 </div>
                             </div>
                         </div>
