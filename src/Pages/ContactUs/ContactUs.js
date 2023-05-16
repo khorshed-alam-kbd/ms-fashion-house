@@ -15,13 +15,13 @@ const ContactUs = () => {
                     <Form className='border rounded p-5 lg:p-10'>
                         <div>
                             <div className='lg:flex gap-2 w-full lg:justify-between' >
-                                <div className="form-control">
+                                <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">First Name</span>
                                     </label>
                                     <input type="text" placeholder="First Name" className="input input-bordered" />
                                 </div>
-                                <div className="form-control">
+                                <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text">Last Name</span>
                                     </label>
