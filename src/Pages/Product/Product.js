@@ -24,7 +24,7 @@ const Product = () => {
                     <p className='text-2xl font-semibold my-5'>Price: $ {price}</p>
                     <div className='lg:flex lg:justify-between my-5'>
                         <button className="btn w-1/3 mr-2">Add to cart</button>
-                        <Link className="w-1/3 ml-2" to={`/checkout`}><button className="w-full btn hover:btn-success">Buy Now</button></Link>
+                        <Link className="w-1/3 ml-2" to={`/checkout/${product.id}`}><button className="w-full btn hover:btn-success">Buy Now</button></Link>
                         {/* <button className="btn w-1/3 ml-2">Buy Now</button> */}
                     </div>
                     <button className="btn btn-outline w-full">ADD TO WISH</button>

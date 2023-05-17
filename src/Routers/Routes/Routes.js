@@ -33,8 +33,9 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://fakestoreapi.com/products/${params.id}`)
             },
             {
-                path: '/checkout',
-                element: <CheckOut></CheckOut>
+                path: '/checkout/:id',
+                element: <CheckOut></CheckOut>,
+                loader: ({ params }) => fetch(`https://fakestoreapi.com/products/${params.id}`)
             },
             {
                 path: '/contactUs',
