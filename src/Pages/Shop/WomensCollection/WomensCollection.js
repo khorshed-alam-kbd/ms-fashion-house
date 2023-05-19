@@ -27,7 +27,7 @@ const WomensCollection = () => {
                                     <p>Rated Person: {product.rating.count}</p>
                                     <p className='font-bold'>Price: ${product.price}</p>
                                     <div className="card-actions justify-end">
-                                        <Link to={`/product/${product.id}`}><button className="btn hover:btn-success ">Buy Now</button></Link>
+                                        <Link to={`/product/${product.id}`}><button className="btn hover:btn-success ">Details</button></Link>
                                     </div>
                                 </div>
                             </div>

@@ -37,11 +37,11 @@ const CheckOutProducts = ({product}) => {
                         <td>
                           <p>${price}</p>
                         </td>
-                        <td>$100</td>
+                        <td>$00</td>
                         <td>1</td>
-                        <td>${price}-100</td>
+                        <td>${price}</td>
                       <th>
-                        <button className="btn btn-ghost btn-xs">details</button>
+                        <button className="btn btn-error btn-xs">Delete</button>
                       </th>
                   </tr> 
                 </tbody>

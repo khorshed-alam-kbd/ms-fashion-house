@@ -44,13 +44,14 @@ const MostRatedProducts = () => {
                 {
                     products.map(product =>
                         <div className="m-5 card card-compact h-96  shadow-xl ">
+                            
                             <figure className='h-48'><img src={product.image} alt="" /></figure>
                             <div className="card-body rounded-b-2xl bg-base-300">
                                 <h2 className="card-title"> {product.title}</h2>
                                 <p className='font-bold'>$ {product.price}</p>
                                 <p className='font-semibold'>Rating: {product.rating.rate}</p>
                                 <div className="card-actions justify-end">
-                                    <Link to={`/product/${product.id}`}><button className="btn btn-xs hover:btn-success ">Buy Now</button></Link>
+                                    <Link to={`/product/${product.id}`}><button className="btn btn-xs hover:btn-success ">Details</button></Link>
                                 </div>
                             </div>
                         </div>

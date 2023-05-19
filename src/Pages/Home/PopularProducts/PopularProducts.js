@@ -26,7 +26,7 @@ const PopularProducts = () => {
                                 <h2 className="card-title">{product.title}</h2>
                                 <p className='font-bold'>$ {product.price}</p>
                                 <div className="card-actions justify-end">
-                                    <Link to={`/product/${product.id}`}><button className="btn btn-sm hover:btn-success ">Buy Now</button></Link>
+                                    <Link to={`/product/${product.id}`}><button className="btn btn-sm hover:btn-success ">Details</button></Link>
                                 </div>
                             </div>
                         </div>
