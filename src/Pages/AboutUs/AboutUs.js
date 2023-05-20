@@ -15,7 +15,7 @@ const AboutUs = () => {
                 </div>
             </div>
             <div >
-                <h1 className="my-7 text-3xl font-semibold text-center"> OUR JOURNEY</h1>
+                <h1 className="my-7 text-3xl font-semibold text-center">OUR JOURNEY</h1>
                 <div className='lg:flex gap-3 lg:justify-between items-center border rounded'>
                     <p className='text-center text-justify p-5'> The Ka Fashion renaissance started under KA in 2013 with unassuming fabric for her bags. KA chose function over fashion. The brand’s nylon bags eventually became a symbol of modernity, allowing luxury to be subversive and beyond the superficial.</p>
 

@@ -25,7 +25,7 @@ const Header = () => {
                         }
                     </ul>
                 </div>
-                <Link to='/' className='btn btn-ghost normal-case text-xl'>
+                <Link to='/' className='btn btn-ghost font-bold lg:text-xl'>
                     <img src={logo} alt='' className='w-10 rounded mr-2'></img>
                     <p> MS FASHION HOUSE</p>
                 </Link>

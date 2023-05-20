@@ -3,15 +3,15 @@ import { Form } from 'react-router-dom';
 
 const ContactUs = () => {
     return (
-        <div className='mx-24 my-10'>
-            <div className='mx-auto'>
+        <div className='lg:mx-24 my-10'>
+            <div className='mx-auto w-full'>
                 <iframe className='mx-auto' width="868" height="327" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=868&amp;height=327&amp;hl=en&amp;q=heriken.com%20Dhaka+()&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
 
 
             </div>
-            <h1 className='my-7 text-2xl font-bold'>GET IN TOUCH</h1>
+            <h1 className='my-7 text-center text-2xl font-bold'>GET IN TOUCH</h1>
             <div className='lg:flex lg:gap-10 lg:justify-between' >
-                <div className='w-2/3'>
+                <div className='mx-5 lg:w-2/3'>
                     <Form className='border rounded p-5 lg:p-10'>
                         <div>
                             <div className='lg:flex gap-2 w-full lg:justify-between' >
@@ -54,7 +54,7 @@ const ContactUs = () => {
                     </Form>
 
                 </div>
-                <div className='mt-5 lg:mt-0 w-1/3'>
+                <div className='m-5 mt-5 lg:mt-0 lg:w-1/3'>
                     <div className='border p-5 mb-5 rounded'>
                         <h1 className='font-bold'>Dhaka</h1>
                         <p>36 zigatola puran kacha bazar, Dhaka, Bangladesh</p>

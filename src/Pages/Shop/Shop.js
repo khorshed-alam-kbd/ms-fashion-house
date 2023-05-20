@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link,} from 'react-router-dom';
 
 
+
 const Shop = () => {
     const [allProducts, setAllProducts] = useState([]);
     useEffect(() => {
@@ -19,9 +20,8 @@ const Shop = () => {
                 <div className='grid lg:grid-cols-3 place-items-center gap-5 group'>
                     {
                         allProducts.map(product =>
-                            
 
-                            <div className="card card-compact shadow-xl duration-500 group-hover:scale-[0.85] hover:!scale-100 cursor-pointer w-72 lg:w-full">
+                            <div className="card card-compact shadow-xl duration-500 group-hover:scale-[0.85] hover:!scale-100 cursor-pointer w-72 lg:w-full h-full">
                                 
                                     <figure><img className='h-48 lg:h-56' src={product.image} alt="" /></figure>
                                     <div className="card-body rounded-b-2xl bg-base-300">
