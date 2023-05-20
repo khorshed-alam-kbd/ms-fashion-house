@@ -11,7 +11,7 @@ const CheckOutProducts = ({product}) => {
             <table className="table w-full">
 
                 <thead>
-                      <tr>
+                      <tr className='text-center'>
                           <th>SL</th>
                           <th className=''>Products</th>
                           <th>Price</th>

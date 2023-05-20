@@ -9,8 +9,8 @@ const Product = () => {
     return (
         <div className='lg:mx-24 my-10'>
             <div className='lg:flex gap-3 lg:justify-between'>
-                <div className='border rounded p-5 w-1/2'>
-                    <img className='mx-auto' src={image} alt="" />
+                <div className='border rounded p-5 w-1/2 '>
+                    <img className='mx-auto lg:h-96	' src={image} alt="" />
                 </div>
 
                 <div className='border rounded w-1/2 p-10'>
@@ -22,11 +22,14 @@ const Product = () => {
                     <p className='text-xl font-semibold my-5'>Rated People: {rating.count}</p>
 
                     <p className='text-2xl font-semibold my-5'>Price: $ {price}</p>
-                    <div className='lg:flex lg:justify-between my-5'>
-                        <button className="btn w-1/3 mr-2">Add to cart</button>
-                        <Link className="w-1/3 ml-2" to={`/checkout/${product.id}`}><button className="w-full btn hover:btn-success">Buy Now</button></Link>
-                        {/* <button className="btn w-1/3 ml-2">Buy Now</button> */}
+
+                    <div className='lg:flex lg:justify-between my-5 '>
+                        <Link className="w-1/3" to={``}><button className="w-full btn hover:btn-success my-2">Add to cart</button></Link>
+
+                        <Link className="w-1/3" to={`/checkout/${product.id}`}><button className="w-full btn hover:btn-success my-2">Buy Now</button></Link>
+                        
                     </div>
+
                     <button className="btn btn-outline w-full">ADD TO WISH</button>
                 </div>
             </div>
