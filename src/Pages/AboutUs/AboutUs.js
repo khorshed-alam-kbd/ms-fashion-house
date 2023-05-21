@@ -4,7 +4,7 @@ import img2 from '../../Assets/Images/aboutBg2.jpg'
 
 const AboutUs = () => {
     return (
-        <div className='mx-24 my-10'>
+        <div className='mx-5 lg:mx-24 my-10'>
             <div >
                 <h1 className="my-7 text-3xl font-semibold text-center"> OUR STORY</h1>
                 <div className='lg:flex gap-3 lg:justify-between items-center border rounded'>

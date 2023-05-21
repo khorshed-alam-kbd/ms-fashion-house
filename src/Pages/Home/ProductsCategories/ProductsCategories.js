@@ -17,9 +17,14 @@ const ProductsCategories = () => {
 
     return (
         <div className='lg:mx-24 my-10'>
-            <h1 className="my-7 text-3xl font-semibold">
-                DISCOVER <br />
+
+            <div className="flex my-7">
+                <p className='font-semibold text-7xl text-base-700'>|</p> 
+                <h1 className='text-3xl font-semibold'> DISCOVER <br />
                 THE COLLECTIONS</h1>
+
+            </div>
+            
 
             <div className="lg:grid grid-rows-2 grid-flow-col gap-4 group">
                 <div className=" hero row-span-2 col-span-2 duration-500 group-hover:scale-[0.85] hover:!scale-100 cursor-pointer" onClick={navigateToMen} style={{ backgroundImage: `url(${mensBg})` }} >
