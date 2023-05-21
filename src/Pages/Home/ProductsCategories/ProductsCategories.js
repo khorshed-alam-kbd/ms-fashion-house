@@ -18,8 +18,8 @@ const ProductsCategories = () => {
     return (
         <div className='lg:mx-24 my-10'>
 
-            <div className="flex my-7">
-                <p className='font-semibold text-7xl text-base-700'>|</p> 
+            <div className="flex items-center my-7">
+                <p className='font-semibold text-7xl text-base-700 mb-5 mr-1'>|</p>
                 <h1 className='text-3xl font-semibold'> DISCOVER <br />
                 THE COLLECTIONS</h1>
 

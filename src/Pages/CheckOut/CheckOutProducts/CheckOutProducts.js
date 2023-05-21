@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const CheckOutProducts = ({product}) => {
+const CheckOutProducts = ({product, calculateTotalPrice}) => {
 
   const { title, image, price, category, description, rating } = product;
 
-  console.log(product);
+ 
+  const [quantity, setQuantity] = useState(1);
+  const [total, setTotal] = useState(price);
+
+  calculateTotalPrice(total); 
+
+  const handleQuantityChange = (event) => {
+    const newQuantity = parseInt(event.target.value);
+    setQuantity(newQuantity);
+    calculateTotal(newQuantity, price);
+    calculateTotalPrice(total); 
+  };
+
+  const calculateTotal = (quantity, price) => {
+    const newTotal = quantity * price;
+    setTotal(newTotal.toFixed(2));
+  };
+
     return (
         <div>
             <div className="overflow-x-auto w-full">
@@ -13,7 +30,7 @@ const CheckOutProducts = ({product}) => {
                 <thead>
                       <tr className='text-center'>
                           <th>SL</th>
-                          <th className=''>Products</th>
+                          <th>Products</th>
                           <th>Price</th>
                           <th>Discount</th>
                           <th>Quantity</th>
@@ -38,18 +55,19 @@ const CheckOutProducts = ({product}) => {
                           <p>${price}</p>
                         </td>
                         <td>$00</td>
-                        <td>1</td>
-                        <td>${price}</td>
+
+                        <td><input type="number" value={quantity} onChange={handleQuantityChange} className='border rounded text-center'/></td>
+                        
+                        <td>${total}</td>
                       <th>
                         <button className="btn btn-error btn-xs">Delete</button>
                       </th>
                   </tr> 
                 </tbody>
-    
             </table>
-  
             </div>
         </div>
+      
     );
 };
 

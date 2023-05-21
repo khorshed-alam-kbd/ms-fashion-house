@@ -39,7 +39,7 @@ const OrderInfo = () => {
                                 <textarea className="textarea textarea-bordered h-24" placeholder="Enter your address"></textarea>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-outline">Order Now</button>
+                                <button className="btn">Order Now</button>
                             </div>
                         </div>
                     </Form>
