@@ -3,6 +3,7 @@ import CheckOutProducts from './CheckOutProducts/CheckOutProducts';
 import OrderInfo from './OrderInfo/OrderInfo';
 import { useLoaderData } from 'react-router-dom';
 import OrderSummary from './OrderSummary/OrderSummary';
+import PaymentMethod from './PaymentMethod/PaymentMethod';
 
 const CheckOut = () => {
     const product = useLoaderData();
@@ -27,10 +28,11 @@ const CheckOut = () => {
         </div>
         <div className="">
             <div className='m-4'>
+                <OrderInfo></OrderInfo>
+                <PaymentMethod></PaymentMethod>
                 <OrderSummary 
                 productPrice={totalPrice}
                 ></OrderSummary>
-                <OrderInfo></OrderInfo>
             </div>
         </div>
     </div >

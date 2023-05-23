@@ -4,7 +4,7 @@ const OrderSummary = ({productPrice}) => {
 
     let totalPrice = ( productPrice + 20 );
     return (
-        <div className='border rounded p-5 lg:p-10 mb-4'>
+        <div className='border rounded p-5 lg:p-10 mt-4'>
             <p className='text-center uppercase text-xl font-bold mb-4'>
               Order Summary
             </p>
@@ -24,6 +24,9 @@ const OrderSummary = ({productPrice}) => {
                 <p > $ {totalPrice} </p>
             </div>
             
+            <div className="form-control mt-6">
+                <button className="btn">Order Now</button>
+            </div>
         </div>
     );
 };
