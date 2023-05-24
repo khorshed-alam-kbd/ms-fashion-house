@@ -1,11 +1,15 @@
 import React from 'react';
-import { Form } from 'react-router-dom';
+import { Form, useForm } from 'react-router-dom';
 
 const OrderInfo = () => {
 
-    const userInfo = data =>{
+    const { register, handleSubmit } = useForm();
 
-        
+    const userInfo = data =>{
+        const fastName = data.fastName;
+        const lastName = data.lastName;
+        const phoneNumber = data.number;
+        const address = data.address;       
     }
     return (
         <div>    
@@ -19,13 +23,13 @@ const OrderInfo = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">First Name:</span>
                                     </label>
-                                    <input type="text" placeholder="First Name" {...register("name", { required: true })} className="input input-bordered" />
+                                    <input type="text" placeholder="First Name" {...register("fastName", { required: true })} className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
                                         <span className="label-text font-bold">Last Name:</span>
                                     </label>
-                                    <input type="text" placeholder="Last Name" className="input input-bordered" />
+                                    <input type="text" placeholder="Last Name" {...register("lastName", { required: true })} className="input input-bordered" />
                                 </div>
                             </div>
 
@@ -33,14 +37,14 @@ const OrderInfo = () => {
                                 <label className="label">
                                     <span className="label-text font-bold"> Phone Number:</span>
                                 </label>
-                                <input type="text" placeholder="Enter Your Phone Number" className="input input-bordered" />
+                                <input type="text" placeholder="Enter Your Phone Number" {...register("number", { required: true })} className="input input-bordered" />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-bold">Address:</span>
                                 </label>
-                                <textarea className="textarea textarea-bordered h-24" placeholder="Enter your address"></textarea>
+                                <textarea className="textarea textarea-bordered h-24" placeholder="Enter your address" {...register("address", { required: true })}></textarea>
                             </div>
                             
                         </div>
@@ -52,7 +56,7 @@ const OrderInfo = () => {
                         <div className='lg:flex justify-between'>
                             <div className="form-control">
                                 <label className="label cursor-pointer gap-2">
-                                    <input type="radio" name="radio-10" value={60} className="radio checked:bg-green-500" checked />
+                                    <input type="radio" name="radio-10" value={60}  className="radio checked:bg-green-500" checked />
                                     <span className="label-text font-semibold"> Inside Dhaka $ 1.00 </span> 
                                 </label>
                             </div>
