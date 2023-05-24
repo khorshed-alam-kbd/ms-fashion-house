@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form } from 'react-router-dom';
 
 const PaymentMethod = () => {
     return (
@@ -6,9 +7,9 @@ const PaymentMethod = () => {
 
                     <div className="mx-auto mb-5 text-center text-xl font-bold rounded">
                             <p>Please select the payment method</p>
-                        </div>
+                    </div>
 
-                        <div className=''>
+                    <Form className=''>
                             <div className="form-control border rounded my-2 px-1">
                                 <label className="label cursor-pointer gap-2">
                                     <input type="radio" name="radio-10" value={60} className="radio checked:bg-green-500" checked />
@@ -28,9 +29,9 @@ const PaymentMethod = () => {
                                 </label>
                             </div>
                             
-                        </div>
+                    </Form>
             
-                    </div>
+        </div>
 
     );
 };

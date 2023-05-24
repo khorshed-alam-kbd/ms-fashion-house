@@ -2,9 +2,12 @@ import React from 'react';
 import { Form } from 'react-router-dom';
 
 const OrderInfo = () => {
+
+    const userInfo = data =>{
+
+        
+    }
     return (
-
-
         <div>    
             <Form className='border rounded p-5 lg:p-10'>
                         <p className='text-center my-2 text-xl font-bold'>
@@ -16,7 +19,7 @@ const OrderInfo = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">First Name:</span>
                                     </label>
-                                    <input type="text" placeholder="First Name" className="input input-bordered" />
+                                    <input type="text" placeholder="First Name" {...register("name", { required: true })} className="input input-bordered" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label">
