@@ -9,9 +9,9 @@ const CheckOut = () => {
     const product = useLoaderData();
 
     const [totalPrice, setTotalPrice] = useState(0);
+    const [deliveryCharge, setDeliveryCharge] = useState(1);
 
     const calculateTotalPrice =(price)=>{
-
         setTotalPrice= price;
     }
 
@@ -28,10 +28,14 @@ const CheckOut = () => {
         </div>
         <div className="">
             <div className='m-4'>
-                <OrderInfo></OrderInfo>
+                <OrderInfo
+                productDeliveryCharge ={setDeliveryCharge}
+                
+                ></OrderInfo>
                 <PaymentMethod></PaymentMethod>
                 <OrderSummary 
                 productPrice={totalPrice}
+                deliveryCharge ={deliveryCharge}
                 ></OrderSummary>
             </div>
         </div>

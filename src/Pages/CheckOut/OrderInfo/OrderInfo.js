@@ -1,7 +1,9 @@
-import React from 'react';
-import { Form, useForm } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Form } from 'react-router-dom';
 
-const OrderInfo = () => {
+const OrderInfo = ({productDeliveryCharge}) => {
+
 
     const { register, handleSubmit } = useForm();
 
@@ -9,8 +11,17 @@ const OrderInfo = () => {
         const fastName = data.fastName;
         const lastName = data.lastName;
         const phoneNumber = data.number;
-        const address = data.address;       
+        const address = data.address;
     }
+
+    const [deliveryCharge, setDeliveryCharge] = useState(2);
+
+    const handleDeliveryChargeChange = (e) => {
+      setDeliveryCharge(e.target.value);
+    };
+    productDeliveryCharge(deliveryCharge);
+
+    
     return (
         <div>    
             <Form className='border rounded p-5 lg:p-10'>
@@ -56,13 +67,13 @@ const OrderInfo = () => {
                         <div className='lg:flex justify-between'>
                             <div className="form-control">
                                 <label className="label cursor-pointer gap-2">
-                                    <input type="radio" name="radio-10" value={60}  className="radio checked:bg-green-500" checked />
-                                    <span className="label-text font-semibold"> Inside Dhaka $ 1.00 </span> 
+                                    <input type="radio" name="deliveryCharge" value={2}  className="radio checked:bg-green-500" checked={deliveryCharge == 2 } onChange={handleDeliveryChargeChange}/>
+                                    <span className="label-text font-semibold"> Inside Dhaka $ 2 </span> 
                                 </label>
                             </div>
                             <div className="form-control">
                                 <label className="label cursor-pointer gap-2">
-                                    <input type="radio" name="radio-10" value={120} className="radio checked:bg-green-500" checked />
+                                    <input type="radio" name="deliveryCharge" value={3} className="radio checked:bg-green-500" checked={deliveryCharge == 3 } onChange={handleDeliveryChargeChange} />
                                     <span className="label-text font-semibold"> Outside Dhaka $ 3.00</span> 
                                 </label>
                             </div>
