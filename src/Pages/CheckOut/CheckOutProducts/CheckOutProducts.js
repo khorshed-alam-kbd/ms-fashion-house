@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-const CheckOutProducts = ({product, calculateTotalPrice}) => {
+const CheckOutProducts = ({products, calculateTotalPrice}) => {
 
-  const { title, image, price, category, description, rating } = product;
+  // const { title, image, price, category, description, rating } = product;
+  const [price, setPrice] = useState(1);
 
- 
   const [quantity, setQuantity] = useState(1);
   const [total, setTotal] = useState(price);
 
@@ -21,6 +21,8 @@ const CheckOutProducts = ({product, calculateTotalPrice}) => {
     const newTotal = quantity * price;
     setTotal(newTotal.toFixed(2));
   };
+
+  console.log(products);
 
     return (
         <div>
@@ -39,30 +41,35 @@ const CheckOutProducts = ({product, calculateTotalPrice}) => {
                       </tr>
                 </thead>
                 <tbody>
-                  <tr className='text-center'>
-                      <td> 1 </td>
+
+                  {
+                    products.map((product, index)=>(
+                      <tr className='text-center' key={index}>
+                      <td> {index + 1} </td>
                         <td>
                             <div className="flex items-center gap-2">
                               <div className="avatar">
                                 <div className="mask mask-squircle w-12 h-12">
-                                  <img src={image} alt="" />
+                                  <img src={product.image} alt="" />
                                 </div>
                               </div>
-                              <div className="font-bold">{title}</div>
+                              <div className="font-bold">{product.title}</div>
                             </div>
                         </td>
                         <td>
-                          <p>${price}</p>
+                          <p>${product.price}</p>
                         </td>
                         <td>$00</td>
 
                         <td><input type="number" value={quantity} onChange={handleQuantityChange} className='border rounded text-center'/></td>
                         
-                        <td>${total}</td>
+                        <td>${product.price * quantity}</td>
                       <th>
                         <button className="btn btn-error btn-xs">Delete</button>
                       </th>
                   </tr> 
+                    ))
+                  }
                 </tbody>
             </table>
             </div>
