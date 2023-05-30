@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { set } from 'react-hook-form';
 
 const CheckOutProducts = ({products, calculateTotalPrice}) => {
 
   // const { title, image, price, category, description, rating } = product;
-  const [price, setPrice] = useState(1);
+
+  const [price, setPrice] = useState('');
 
   const [quantity, setQuantity] = useState(1);
   const [total, setTotal] = useState(price);
@@ -44,7 +46,7 @@ const CheckOutProducts = ({products, calculateTotalPrice}) => {
 
                   {
                     products.map((product, index)=>(
-                      <tr className='text-center' key={index}>
+                      <tr className='text-center' key={index} onLoad={()=> setPrice(product.price)} >
                       <td> {index + 1} </td>
                         <td>
                             <div className="flex items-center gap-2">
@@ -57,7 +59,7 @@ const CheckOutProducts = ({products, calculateTotalPrice}) => {
                             </div>
                         </td>
                         <td>
-                          <p>${product.price}</p>
+                          <p id='price'>${product.price}</p>
                         </td>
                         <td>$00</td>
 
