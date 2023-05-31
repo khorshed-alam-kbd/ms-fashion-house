@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-import { set } from 'react-hook-form';
+import React, { useEffect, useState } from 'react';
 
 const CheckOutProducts = ({products, calculateTotalPrice}) => {
-
-  // const { title, image, price, category, description, rating } = product;
 
   const [price, setPrice] = useState('');
 
@@ -36,7 +33,6 @@ const CheckOutProducts = ({products, calculateTotalPrice}) => {
                           <th>SL</th>
                           <th>Products</th>
                           <th>Price</th>
-                          <th>Discount</th>
                           <th>Quantity</th>
                           <th>Total</th>
                           <th>Action</th>
@@ -59,11 +55,10 @@ const CheckOutProducts = ({products, calculateTotalPrice}) => {
                             </div>
                         </td>
                         <td>
-                          <p id='price'>${product.price}</p>
+                          <p id='pp'>${product.price}</p>
                         </td>
-                        <td>$00</td>
 
-                        <td><input type="number" value={quantity} onChange={handleQuantityChange} className='border rounded text-center'/></td>
+                        <td><input type="number" value={quantity} onChange={handleQuantityChange} className='border rounded text-center w-14'/></td>
                         
                         <td>${product.price * quantity}</td>
                       <th>
