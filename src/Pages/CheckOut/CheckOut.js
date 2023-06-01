@@ -10,37 +10,37 @@ const CheckOut = () => {
 
     const [cartItems, setCartItems] = useState([]);
 
-      useEffect(() => {
+    useEffect(() => {
         setCartItems([...cartItems, product]);
-      }, [product]);
+    }, [product]);
 
     const [totalPrice, setTotalPrice] = useState(0);
     const [deliveryCharge, setDeliveryCharge] = useState(1);
 
     return (
         <div className="lg:mx-24 my-5 lg:grid grid-cols-3 gap-5">
-        <div className="col-span-2 ">
-            <div className='m-4'>
-                <CheckOutProducts 
-                products={cartItems}
-                calculateTotalPrice ={setTotalPrice}
-                ></CheckOutProducts>
+            <div className="col-span-2 ">
+                <div className='m-4'>
+                    <CheckOutProducts
+                        products={cartItems}
+                        calculateTotalPrice={setTotalPrice}
+                    ></CheckOutProducts>
+                </div>
             </div>
-        </div>
-        <div className="">
-            <div className='m-4'>
-                <OrderInfo
-                productDeliveryCharge ={setDeliveryCharge}
-                
-                ></OrderInfo>
-                <PaymentMethod></PaymentMethod>
-                <OrderSummary 
-                productPrice={totalPrice}
-                deliveryCharge ={deliveryCharge}
-                ></OrderSummary>
+            <div className="">
+                <div className='m-4'>
+                    <OrderInfo
+                        productDeliveryCharge={setDeliveryCharge}
+
+                    ></OrderInfo>
+                    <PaymentMethod></PaymentMethod>
+                    <OrderSummary
+                        productPrice={totalPrice}
+                        deliveryCharge={deliveryCharge}
+                    ></OrderSummary>
+                </div>
             </div>
-        </div>
-    </div >
+        </div >
     );
 };
 

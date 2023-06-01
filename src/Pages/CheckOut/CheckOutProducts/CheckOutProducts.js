@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
-const CheckOutProducts = ({products, calculateTotalPrice}) => {
+const CheckOutProducts = ({ products, calculateTotalPrice }) => {
 
   const [price, setPrice] = useState('');
 
   const [quantity, setQuantity] = useState(1);
   const [total, setTotal] = useState(price);
 
-  calculateTotalPrice(total); 
+  calculateTotalPrice(total);
 
   const handleQuantityChange = (event) => {
     const newQuantity = parseInt(event.target.value);
     setQuantity(newQuantity);
     calculateTotal(newQuantity, price);
-    calculateTotalPrice(total); 
+    calculateTotalPrice(total);
   };
 
   const calculateTotal = (quantity, price) => {
@@ -23,56 +23,56 @@ const CheckOutProducts = ({products, calculateTotalPrice}) => {
 
   console.log(products);
 
-    return (
-        <div>
-            <div className="overflow-x-auto w-full">
-            <table className="table w-full">
+  return (
+    <div>
+      <div className="overflow-x-auto w-full">
+        <table className="table w-full">
 
-                <thead>
-                      <tr className='text-center'>
-                          <th>SL</th>
-                          <th>Products</th>
-                          <th>Price</th>
-                          <th>Quantity</th>
-                          <th>Total</th>
-                          <th>Action</th>
-                      </tr>
-                </thead>
-                <tbody>
+          <thead>
+            <tr className='text-center'>
+              <th>SL</th>
+              <th>Products</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
 
-                  {
-                    products.map((product, index)=>(
-                      <tr className='text-center' key={index} onLoad={()=> setPrice(product.price)} >
-                      <td> {index + 1} </td>
-                        <td>
-                            <div className="flex items-center gap-2">
-                              <div className="avatar">
-                                <div className="mask mask-squircle w-12 h-12">
-                                  <img src={product.image} alt="" />
-                                </div>
-                              </div>
-                              <div className="font-bold">{product.title}</div>
-                            </div>
-                        </td>
-                        <td>
-                          <p id='pp'>${product.price}</p>
-                        </td>
+            {
+              products.map((product, index) => (
+                <tr className='text-center' key={index} onLoad={() => setPrice(product.price)} >
+                  <td> {index + 1} </td>
+                  <td>
+                    <div className="flex items-center gap-2">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <img src={product.image} alt="" />
+                        </div>
+                      </div>
+                      <div className="font-bold">{product.title}</div>
+                    </div>
+                  </td>
+                  <td>
+                    <p id='pp'>${product.price}</p>
+                  </td>
 
-                        <td><input type="number" value={quantity} onChange={handleQuantityChange} className='border rounded text-center w-14'/></td>
-                        
-                        <td>${product.price * quantity}</td>
-                      <th>
-                        <button className="btn btn-error btn-xs">Delete</button>
-                      </th>
-                  </tr> 
-                    ))
-                  }
-                </tbody>
-            </table>
-            </div>
-        </div>
-      
-    );
+                  <td><input type="number" value={quantity} onChange={handleQuantityChange} className='border rounded text-center w-14' /></td>
+
+                  <td>${product.price * quantity}</td>
+                  <th>
+                    <button className="btn btn-error btn-xs">Delete</button>
+                  </th>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  );
 };
 
 export default CheckOutProducts;
